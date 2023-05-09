@@ -145,7 +145,13 @@ const GeneralInfoForm: React.FC<GeneralInfoFormProps> = ({
         <Controller
           name='email'
           control={control}
-          rules={{ required: true }}
+          rules={{
+            required: true,
+            pattern: {
+              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+              message: 'Invalid email address',
+            },
+          }}
           render={({ field: { onChange, value } }) => (
             <CustomInput
               placeholder='Email'
