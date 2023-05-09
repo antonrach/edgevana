@@ -110,8 +110,12 @@ const SignUpPageLayout: React.FC<SignUpPageLayoutProps> = ({
         {rightChildren}
         <Box
           sx={{
+            marginLeft: specialPaddingLeft ? '-50px' : 0,
             [theme.breakpoints.up(medium)]: {
               display: 'none',
+            },
+            [theme.breakpoints.down(small)]: {
+              marginLeft: '-30px',
             },
           }}
         >
