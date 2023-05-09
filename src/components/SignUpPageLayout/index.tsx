@@ -115,7 +115,7 @@ const SignUpPageLayout: React.FC<SignUpPageLayoutProps> = ({
               display: 'none',
             },
             [theme.breakpoints.down(small)]: {
-              marginLeft: '-30px',
+              marginLeft: specialPaddingLeft ? '-30px' : 0,
             },
           }}
         >
