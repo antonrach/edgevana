@@ -30,22 +30,23 @@ const AccountNavigation: React.FC<AccountNavigationProps> = ({
   const theme = useTheme();
 
   const { push, pathname } = useRouter();
-  const logOut = () => {
+
+  const closeMenu = () => {
     if (close) {
       close();
     }
+  };
+
+  const logOut = () => {
+    closeMenu();
     push('/sign-up/account-type');
   };
   const darkMode = () => {
-    if (close) {
-      close();
-    }
+    closeMenu();
     push('/dark-mode');
   };
   const lightMode = () => {
-    if (close) {
-      close();
-    }
+    closeMenu();
     if (pathname === '/dark-mode') {
       push('/setup/news');
     }
